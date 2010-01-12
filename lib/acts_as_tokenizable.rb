@@ -7,3 +7,10 @@ class ActiveRecord::Base
     self.before_validation :tokenize
   end
 end
+
+class ActsAsTokenizable
+  
+  autoload :Tasks, 'acts_as_tokenizable/tasks'
+  
+  
+end

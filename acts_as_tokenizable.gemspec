@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "acts_as_tokenizable.gemspec",
      "init.rb",
      "lib/acts_as_tokenizable.rb",
      "lib/acts_as_tokenizable/acts_as_tokenizable.rb",
