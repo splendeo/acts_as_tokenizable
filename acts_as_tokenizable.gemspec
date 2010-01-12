@@ -28,8 +28,9 @@ Gem::Specification.new do |s|
      "lib/acts_as_tokenizable.rb",
      "lib/acts_as_tokenizable/acts_as_tokenizable.rb",
      "lib/acts_as_tokenizable/string_extensions.rb",
-     "lib/acts_as_tokenizable/tasks.rb",
+     "lib/tasks/acts_as_tokenizable.rake",
      "pkg/acts_as_tokenizable-0.1.0.gem",
+     "pkg/acts_as_tokenizable-0.2.0.gem",
      "test/helper.rb",
      "test/test_acts_as_tokenizable.rb"
   ]
