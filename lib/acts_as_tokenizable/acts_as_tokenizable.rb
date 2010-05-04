@@ -32,7 +32,7 @@ module ActsAsTokenizable
         search_strings = []
         search_values = []
         prepare_search_token(search_token).words.each do |w|
-          search_strings.push("#{token_field_name} LIKE ?")
+          search_strings.push("#{table_name}.#{token_field_name} LIKE ?")
           search_values.push("%#{w}%")
         end
         {:conditions => [search_strings.join(' AND '), *search_values]}
