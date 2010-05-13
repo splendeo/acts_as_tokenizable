@@ -15,7 +15,7 @@ String.class_eval do
   
   #returns an array of strings containing the words on this string. removes spaces, strange chars, etc
   def words
-    gsub(/\W/, ' ').split
+    gsub(/[^\w|-]/, ' ').split
   end
   
   #removes certain words from a string. 
@@ -49,7 +49,7 @@ String.class_eval do
   
   #convert into something that can be used as an indexation key
   def to_token(max_length=255)
-    string = self.normalize.strip.downcase.gsub(/\W/, '') #remove all non-alphanumeric
+    string = self.normalize.strip.downcase.gsub(/[^\w|-]/, '') #remove all non-alphanumeric but hyphen (-)
     string = string.squeeze unless string.numeric? #remove duplicates, except on pure numbers
     return string[0..(max_length-1)]
   end
