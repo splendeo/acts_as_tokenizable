@@ -1,5 +1,3 @@
-require 'config/environment'
-
 namespace :tokens do
   desc "Generates the token for objects without tokens."
   task :generate => :environment do
