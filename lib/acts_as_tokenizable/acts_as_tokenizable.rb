@@ -21,7 +21,7 @@ module ActsAsTokenizable
     # stop words, replacing words.
     # By default it tokenizes each word and removes duplicates.
     def prepare_search_token(search_token)
-      StringUtils::words_to_token(search_token)
+      StringUtils.words_to_token(search_token)
     end
   end
 
@@ -32,7 +32,7 @@ module ActsAsTokenizable
       named_scope :tokenized_by, lambda {|search_token|
         search_strings = []
         search_values = []
-        StringExtensions::words(prepare_search_token(search_token)).each do |w|
+        StringUtils.words(prepare_search_token(search_token)).each do |w|
           if w[0,1] == '-'
             search_strings.push("#{table_name}.#{token_field_name} NOT LIKE ?")
             search_values.push("%#{w[1,w.length]}%")
