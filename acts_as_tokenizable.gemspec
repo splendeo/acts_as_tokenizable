@@ -27,10 +27,8 @@ Gem::Specification.new do |s|
     "init.rb",
     "lib/acts_as_tokenizable.rb",
     "lib/acts_as_tokenizable/acts_as_tokenizable.rb",
-    "lib/acts_as_tokenizable/string_extensions.rb",
+    "lib/acts_as_tokenizable/string_utils.rb",
     "lib/tasks/acts_as_tokenizable.rake",
-    "pkg/acts_as_tokenizable-0.1.0.gem",
-    "pkg/acts_as_tokenizable-0.2.0.gem",
     "test/helper.rb",
     "test/test_acts_as_tokenizable.rb"
   ]
@@ -42,17 +40,7 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_acts_as_tokenizable.rb"
   ]
+  s.add_dependency "babosa", "~> 0.3.7"
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
-    else
-      s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
-    end
-  else
-    s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
-  end
 end
 

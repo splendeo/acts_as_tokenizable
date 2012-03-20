@@ -1,4 +1,4 @@
-require 'acts_as_tokenizable/string_extensions'
+require 'acts_as_tokenizable/string_utils'
 
 module ActsAsTokenizable
 
@@ -21,7 +21,7 @@ module ActsAsTokenizable
     # stop words, replacing words.
     # By default it tokenizes each word and removes duplicates.
     def prepare_search_token(search_token)
-      StringExtensions::words_to_token(search_token)
+      StringUtils::words_to_token(search_token)
     end
   end
 

@@ -1,11 +1,8 @@
+require 'babosa' # ensure that the babosa gem is loaded
+
 module ActsAsTokenizable
 
-  module StringExtensions
-
-    #converts accented letters into ascii equivalents (i.e. ñ becomes n)
-    def self.normalize(str)
-      str.mb_chars.normalize(:d).gsub(/[^\x00-\x7F]/n,'').to_s
-    end
+  module StringUtils
 
     #returns true if numeric, false, otherwise
     def self.numeric?(str)
@@ -49,14 +46,10 @@ module ActsAsTokenizable
 
     #convert into something that can be used as an indexation key
     def self.to_token(str, max_length=255)
-      str = normalize(str).strip.downcase.gsub(/[^\w|-]/, '') #remove all non-alphanumeric but hyphen (-)
+      # to_slug and normalize are provided by the 'babosa' gem
+      str = str.to_slug.normalize.strip.downcase.gsub(/[^\w|-]/, '') #remove all non-alphanumeric but hyphen (-)
       str = str.squeeze unless numeric?(str) #remove duplicates, except on pure numbers
       return str[0..(max_length-1)]
-    end
-
-    #convert into something that can be used on links
-    def self.to_slug(str, separator='-')
-      words(normalize(str.strip.downcase)).join(separator)
     end
 
     #tokenizes each word individually, and joins the word with the separator char.
