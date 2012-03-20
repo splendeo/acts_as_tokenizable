@@ -1,4 +1,4 @@
-require 'babosa' # ensure that the babosa gem is loaded
+require 'babosa' # make sure that babosa is loaded
 
 module ActsAsTokenizable
 

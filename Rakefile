@@ -10,7 +10,7 @@ begin
     gem.email = "github@splendeo.es"
     gem.homepage = "http://github.com/splendeo/acts_as_tokenizable"
     gem.authors = ["Enrique Garcia Cota", "Francisco de Juan"]
-    gem.add_dependency "babosa", "~> 0.3.3"
+    gem.add_dependency "babosa", "~> 0.3.7"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
