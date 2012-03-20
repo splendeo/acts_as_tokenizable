@@ -10,8 +10,7 @@ begin
     gem.email = "github@splendeo.es"
     gem.homepage = "http://github.com/splendeo/acts_as_tokenizable"
     gem.authors = ["Enrique Garcia Cota", "Francisco de Juan"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency "babosa", "~> 0.3.3"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
