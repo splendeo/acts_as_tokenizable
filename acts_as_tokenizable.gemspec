@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{acts_as_tokenizable}
-  s.version = "0.6.1"
+  s.version = "0.7.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Enrique Garcia Cota}, %q{Francisco de Juan}]
-  s.date = %q{2012-03-20}
+  s.date = %q{2012-03-21}
   s.description = %q{Make ActiveRecord models easily searchable via tokens.}
   s.email = %q{github@splendeo.es}
   s.extra_rdoc_files = [

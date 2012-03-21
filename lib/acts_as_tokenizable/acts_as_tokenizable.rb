@@ -29,7 +29,7 @@ module ActsAsTokenizable
     base.class_eval do
       extend ClassMethods
 
-      named_scope :tokenized_by, lambda {|search_token|
+      scope :tokenized_by, lambda {|search_token|
         search_strings = []
         search_values = []
         StringUtils.words(prepare_search_token(search_token)).each do |w|
@@ -41,7 +41,7 @@ module ActsAsTokenizable
             search_values.push("%#{w}%")
           end
         end
-        {:conditions => [search_strings.join(' AND '), *search_values]}
+        where([search_strings.join(' AND '), *search_values])
       }
     end
   end
